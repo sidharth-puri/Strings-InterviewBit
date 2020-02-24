@@ -1,0 +1,30 @@
+int Solution::atoi(const string str) {
+    long long int sign=1,base=0,i=0;
+    while(str[i]==' ')
+    {
+        i++;
+    }
+    if(str[i]=='-')
+    {
+        sign=-1;
+        i++;
+    }
+    if(str[i]=='+')
+    {
+        sign=1;
+        i++;
+    }
+    while(str[i]>='0' && str[i]<='9') {
+        
+      if (base > INT_MAX / 10 || (base == INT_MAX / 10 && str[i] - '0' > 7)) { 
+            if (sign == 1) 
+                return INT_MAX; 
+            else
+                return INT_MIN; 
+        } 
+          base=base*10+ (str[i]-'0');
+        i++;
+      // printf("%d  ",base);
+    }
+    return base*sign;
+}
