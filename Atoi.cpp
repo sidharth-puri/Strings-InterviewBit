@@ -24,7 +24,7 @@ int Solution::atoi(const string str) {
         } 
           base=base*10+ (str[i]-'0');
         i++;
-      // printf("%d  ",base);
+     
     }
     return base*sign;
 }
